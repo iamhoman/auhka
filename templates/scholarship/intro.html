@@ -1,0 +1,17 @@
+{% extends 'scholarship/appHome.html' %}
+{% load static %}
+
+{% block main %}
+
+        <main>
+            <h3> Introduction & History </h3>
+            <br>
+            <p> In August 1989 the first Aberdeen University Environmental Scholarship was awarded to Ms Wendy Ko, who received a grant of HK$40,000 plus accommodation in Aberdeen. </p>
+            <p> In 1991, with the generous support from <a href="{% url 'scholarship:swire' %}">the Swire Education Trust</a> and the Foreign and Commonwealth Office (FCO) in London, the second and first fully supported Environmental Scholarship was awarded to Mr K K Chan. Since then, one full scholarship was awarded to a Hong Kong Chinese every year, and all of them took the MSc in Environmental Science until recent years, when the scheme has also been opened to other environment-related postgraduate courses. </p>
+            <p> Our scholarships have received good recognition and we have also gained support and are linked to <a href="{% url 'scholarship:chevening' %}">the prestigious Chevening Scholarships</a> funded by the Foreign and Commonwealth Office (FCO) in London.</p>
+            <p> Upon finishing their studies, scholars have contributed their knowledge to the best advantage of Hong Kong and the Mainland China. Many of them are currently holding important positions in HKSAR governmental departments (namely Environmental Protection Department and Agriculture, Fisheries & Conservation Department), environmental businesses, sustainability development of private corporations and environmental NGOs. </p>
+            <p> These scholars are also known affectionately as ‘Granite Pearls’, marrying the essence of Aberdeen (aka ‘Granite City’) and Hong Kong (aka ‘Pearl of the Orient’). </p>
+            <p> To make this scholarship lasting in future, we accept donation to our scholarship program. Please contact us if you would like to donate. </p>
+        </main>
+
+{% endblock %}

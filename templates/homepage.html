@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extraHead %}
+    <link rel="stylesheet" href="{% static '/css/homepage.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+    <br>
+    <br>
+
+    <div id="wrapper">
+        <aside>
+            <div class="card" style="width: 18rem;">
+                <img src="{% static '/images/intro_president_pix.jpg' %}" class="card-img-top" alt="intro_president_pix">
+                <div class="card-body">
+                    <h5 class="card-title">Marshall H Byres</h5>
+                    <p class="card-text">President</p>
+                    <p class="card-text">Aberdeen University Hong Kong Association</p>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <p> Dear Friends of Aberdeen University </p>
+            <p> There have been two “Aberdeens” in my life, the one in Scotland where I was born, raised and educated and the other on the island called Hong Kong which has been my home for the past 30-ish years. </p>
+            <p> It is therefore with double pleasure that I welcome you to the Aberdeen University Hong Kong Association website and hope to see you at many of the events which the committee will be organizing, details of some of which can be found here on the website now, throughout each year. </p>
+            <p> For those unfamiliar with our Association, we are basically an alumni association – but by no means exclusively so, and we welcome anyone who has a connection with the University or indeed with the City of Aberdeen itself. </p>
+            <p> In addition to our alumni-based association, we also have the Aberdeen University Scholarship Fund which has been (at least partly) responsible for sending over 20 scholars to Aberdeen to study, primarily, Environmental Science.  These graduates of Aberdeen University, all Hong Kong born persons, are known affectionately as our “Granite Pearls”.  I say “partly responsible” as it would be remiss of me not to mention the benevolence and invaluable support we have received over the years from the Swire-Scott Foundations in respect of these scholarships. </p>
+            <p> I can think of no better way to close this short message than quoting the motto of Aberdeen, “Bon Accord”, generally expanded in translation to “Happy to Meet, Sorry to Part, Happy to Meet Again”! </p>
+            <p> I hope to meet you soon. </p>
+            <p> Best Wishes </p>
+            <p> Marshall H Byres </p>
+            <p> President </p>
+            <p> Aberdeen University Hong Kong Association </p>
+        </main>
+
+    </div>
+
+    <br>
+
+{% endblock %}

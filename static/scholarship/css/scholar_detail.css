@@ -1,0 +1,40 @@
+
+#wrapper{
+    display: grid;
+    grid-template-areas: 1fr 1fr 2fr;
+    grid-auto-rows: minmax(50, auto);
+    grid-gap: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    grid-template-areas:
+        "aside scholar_pic profile"
+        "aside main main";
+}
+
+#wrapper > * {
+    /*border: 1px solid black;*/
+    padding: 30px;
+}
+
+aside{
+    grid-area: aside;
+    text-align: left;
+}
+
+scholar_pic{
+    grid-area: scholar_pic;
+    text-align: left;
+}
+
+profile{
+    grid-area: profile;
+    text-align: left;
+}
+
+main{
+    grid-area: main;
+    align-self: start;
+    justify-self: start;
+    text-align: justify;
+}

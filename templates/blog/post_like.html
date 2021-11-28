@@ -1,0 +1,19 @@
+{% extends "blog/appBase.html" %}
+
+{% block title %} post_like {% endblock %}
+
+{% block content %}
+
+    <h2> post_like.html </h2>
+
+    <form method="post">
+        {% csrf_token %}
+        Like this post? Let others know.
+        {{ form.as_p }}
+        <p> <button class="btn btn-success float-right"> Submit </button> </p>
+    </form>
+
+    <br>
+    <br>
+
+{% endblock %}

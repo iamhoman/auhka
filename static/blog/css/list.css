@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+.staticimg {
+    display: inline-block;
+    background-color: #aaa;
+    width: 240px auto;
+    float: left;
+    margin: 3px;
+}
+
+.postimg {
+    display: inline-block;
+    background-color: #aaa;
+    width: 240px;
+    float: left;
+    margin: 3px;
+}
+
+img {
+    object-fit: contain;
+    height: inherit;
+    width: 100%;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 20px;
+    /*margin-top: 20px;*/
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+#post_wrapper {
+    display: grid;
+    background-color: white;
+    grid-template-areas: 1fr 2fr;
+    grid-auto-rows: minmax(50, auto);
+    grid-gap: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    grid-template-areas:
+        "post_title post_title"
+        "post_aside post_body"
+        "post_stat post_comment";
+}
+
+post_title{
+    grid-area: post_title;
+    text-align: left;
+}
+
+post_aside{
+    grid-area: post_aside;
+    text-align: left;
+}
+
+post_body{
+    grid-area: post_body;
+    text-align: justify;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: #abdde5;
+}
+
+post_stat{
+    grid-area: post_stat;
+    text-align: center;
+    padding: 10px;
+}
+
+post_comment{
+    grid-area: post_comment;
+    text-align: justify;
+    padding: 10px;
+    font-size: 90%;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+.postTime_author{
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-links{
+    display: flex;
+    justify-content: space-evenly;
+}

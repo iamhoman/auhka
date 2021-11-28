@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extraHead %}
+    <link rel="stylesheet" href="{% static '/intro/css/appHome.css' %}" />
+{% endblock %}
+
+{% block title %} About AUHKA {% endblock %}
+
+{% block content %}
+
+    <br>
+    <br>
+
+    <div id="wrapper">
+
+    <appNavBar>
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+            <a href="{% url 'intro:auhka' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                <span class="fs-4">About Us</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li>
+                    <a href="{% url 'intro:auhka' %}" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+                        AUHKA
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'intro:committee' %}" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+                        Committee
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'intro:auhka_docs' %}" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+                        AUHKA Documents
+                    </a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </appNavBar>
+
+    <aside>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <img src="{% static '/intro/images/auhka_logo.jpg' %}" class="card-img-top" alt="donate2scholarship">
+            </div>
+        </div>
+    </aside>
+
+
+    {% block main %}{% endblock %}
+
+    </div>
+
+    <br>
+
+{% endblock %}

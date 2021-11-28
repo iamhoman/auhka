@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extraHead %}
+    <link rel="stylesheet" href="{% static 'blog/css/list.css' %}">
+{% endblock %}
+
+{% block title %} AUHKA Blog {% endblock %}
+
+{% block content %}
+
+    <br>
+    <br>
+
+    <div class="header" style="background-color: lightgray">
+        <h2> AUHKA Blog </h2>
+        <h5> Total number of posts: {{ post_count }}</h5>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="leftcolumn">
+        {% for post in page.object_list %}
+            <div id="post_wrapper">
+                <post_title>
+                    <h2 style="text-align:center">{{ post.title }}</h2>
+                    <div class="postTime_author">
+                        <p> {{ post.publish }} </p>
+                        <p> by {{ post.author }} </p>
+                    </div>
+                </post_title>
+                <post_aside>
+                    {% if post.pic01 %}
+                        <div class="postimg" style="height:200px;">
+                            <img src="{{ MEDIA_URL }}{{ post.pic01.url }}" class="card-img-top" alt="post_pic01">
+                        </div>
+                    {% endif %}
+                    {% if post.pic02 %}
+                        <div class="postimg" style="height:200px;">
+                            <img src="{{ MEDIA_URL }}{{ post.pic02.url }}" class="card-img-top" alt="post_pic02">
+                        </div>
+                    {% endif %}
+                    {% if post.pic03 %}
+                        <div class="postimg" style="height:200px;">
+                            <img src="{{ MEDIA_URL }}{{ post.pic03.url }}" class="card-img-top" alt="post_pic03">
+                        </div>
+                    {% endif %}
+                    {% if post.pic04 %}
+                        <div class="postimg" style="height:200px;">
+                            <img src="{{ MEDIA_URL }}{{ post.pic04.url }}" class="card-img-top" alt="post_pic04">
+                        </div>
+                    {% endif %}
+                </post_aside>
+                <post_body>
+                    <h3> Main Text: </h3>
+                    <p> {{ post.body | linebreaks }} </p>
+                </post_body>
+                <post_stat>
+                    <button type="button" class="btn btn-outline-danger"> <a href="{% url 'blog:post_like' post.id %}"> Like </a> </button>
+                    <button type="button" class="btn btn-outline-secondary"> <a href="{% url 'blog:post_comment' post.id %}"> Comment </a> </button>
+                    <button type="button" class="btn btn-outline-primary"> <a href="{% url 'blog:post_delete' post.id %}"> Delete </a> </button>
+                    <br>
+                    <br>
+                    <p> Number of likes: {{ post.isLike.count }}</p>
+                    <p> Number of comments: {{ post.postComment.count }}</p>
+                </post_stat>
+                <post_comment>
+                    <h5> Comments: </h5>
+                    {% for apostComment in post.postComment.all %}
+                        <p> {{apostComment.commenter}} : {{apostComment.comment}} </p>
+                    {% endfor %}
+                </post_comment>
+            </div>
+        {% endfor %}
+
+            <div class="page-links">
+                <a href="{% url 'blog:post_list' %}?page=1"> First </a>
+                {% if page.has_previous %}
+                    <a href="{% url 'blog:post_list' %}?page={{ page.previous_page_number }}"> Previous </a>
+                {% endif %}
+                {% if page.has_next %}
+                    <a href="{% url 'blog:post_list' %}?page={{ page.next_page_number }}"> Next </a>
+                {% endif %}
+                <a href="{% url 'blog:post_list' %}?page={{ page_tot }}"> Last </a>
+                <span> Page number: {{ page.number }} / {{ page_tot }} </span>
+            </div>
+
+        </div>
+
+        <div class="rightcolumn">
+            <div class="card">
+                <div class="staticimg" style="height:100px;">
+                   <img src="{% static 'blog/images/post_it.png' %}" alt="post_it">
+                </div>
+                <p> We welcome any AUHKA members to make a post!</p>
+                <p> <a href="{% url 'blog:post_create' %}"> Make a Post </a></p>
+            </div>
+            <br>
+            <br>
+            <div class="card">
+                <h3> Recommended Posts: </h3>
+                <p style="color: #da291c; font-size:80%"> To be recommended when posts are ready. </p>
+                <div class="fakeimg">Post01</div><br>
+                <div class="fakeimg">Post02</div><br>
+                <div class="fakeimg">Post03</div>
+            </div>
+            <br>
+            <br>
+            <div class="card">
+                <h3>Contact Us</h3>
+                <p><a href="mailto:info@auhka.org">info@auhka.org</a></p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends "blog/appBase.html" %}
+
+{% block title %} post_like {% endblock %}
+
+{% block content %}
+
+    <h2> post_delete.html </h2>
+
+    <form method="post">
+        {% csrf_token %}
+        Are you sure you want to delete this item?
+        This system does not back up after deletion. Bare in mind about this.
+        <input type="submit" value="Yes" />
+        <a href="/"> Cancel </a>
+    </form>
+
+    <br>
+    <br>
+
+{% endblock %}

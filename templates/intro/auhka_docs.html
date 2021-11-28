@@ -1,0 +1,33 @@
+
+{% extends 'intro/appHome.html' %}
+{% load static %}
+
+{% block main %}
+
+    <main>
+        <h3> Constitution and Annual Reports </h3>
+        <br>
+        <h5> AUHKA Constitution </h5>
+        <p> <a href="{% static '/file/AUHKA_constitution.pdf' %}"> Constitution </a> </p>
+        <br>
+        <br>
+        <br>
+        <h5> AGM Reports </h5>
+        <p> <a href="{% static '/file/AUHKA_AGM_minute_y2010.pdf' %}"> AGM Minute 2009-2010 </a> </p>
+        <p> <a href="{% static '/file/AUHKA_AGM_minute_y2011.pdf' %}"> AGM Minute 2010-2011 </a> </p>
+        <p> <a href="{% static '/file/AUHKA_AGM_minute_y2012.pdf' %}"> AGM Minute 2011-2012 </a> </p>
+        <p> <a href="{% static '/file/AUHKA_AGM_minute_y2013.pdf' %}"> AGM Minute 2012-2013 </a> </p>
+        <p> <a href="{% static '/file/AUHKA_AGM_minute_y2014.pdf' %}"> AGM Minute 2013-2014 </a> </p>
+        <br>
+        <br>
+        <br>
+        <h5> Chairman's Report </h5>
+        <p> <a href="{% static '/file/AUHKA_ChairmanReport_y2010.pdf' %}"> Chairman's Report 2009-2010 </a> </p>
+        <p> <a href="{% static '/file/AUHKA_ChairmanReport_y2011.pdf' %}"> Chairman's Report 2010-2011 </a> </p>
+        <p> <a href="{% static '/file/AUHKA_ChairmanReport_y2013.pdf' %}"> Chairman's Report 2012-2013 </a> </p>
+        <p> <a href="{% static '/file/AUHKA_ChairmanReport_y2014.pdf' %}"> Chairman's Report 2013-2014 </a> </p>
+        <br>
+        <p style="color: #da291c"> This page certainly requires updates. Please pass the documents. </p>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extraHead %}
+    <link rel="stylesheet" href="{% static 'scholarship/css/scholar_detail.css' %}">
+{% endblock %}
+
+{% block title %} ScholarDetailView {% endblock %}
+
+{% block content %}
+
+    <br>
+    <br>
+
+    <div id="wrapper">
+
+        <aside>
+            <h4>Our Scholars:</h4>
+            <ol>
+                {% for ascholar in scholar_list %}
+                    <li>
+                        <a href="{% url 'scholarship:scholar_detail' ascholar.pk %}"> {{ascholar.title}} {{ascholar.firstname_eng}} {{ascholar.lastname_eng}}</a>
+                    </li>
+                {% endfor %}
+            </ol>
+        </aside>
+
+        <scholar_pic>
+            <img src="{{ MEDIA_URL }}{{ scholar.pic.url }}" class="card-img-top" alt="scholar_pic">
+        </scholar_pic>
+
+        <profile>
+            <p> <b>Name of Scholar:</b> {{ scholar.firstname_eng }} {{ scholar.lastname_eng }} </p>
+            <hr>
+            <p> <b>Year of Study:</b> {{ scholar.year_start }} - {{ scholar.year_end }}</p>
+            <hr>
+            <p> <b>Subject of Study:</b> {{ scholar.programmeName }}</p>
+            <hr>
+            {% if scholar.thesisTitle %}
+                <p> <b>Title of Thesis: </b> {{ scholar.thesisTitle }}</p>
+                <hr>
+            {% endif %}
+            {% if scholar.latestJob %}
+                <p> <b>Way to Serve the Society: </b>{{ scholar.latestJob }}</b></p>
+                <hr>
+            {% endif %}
+        </profile>
+
+        <main>
+            <h4> Sharing from the Scholar: </h4>
+            <br>
+            <p> {{ scholar.sharing | linebreaks }}</p>
+        </main>
+    </div>
+
+    <br>
+
+{% endblock %}
